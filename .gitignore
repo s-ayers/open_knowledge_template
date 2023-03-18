@@ -1,0 +1,5 @@
+
+/vendor/*
+/web/*
+
+!/web/modules/custom/*
