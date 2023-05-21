@@ -6,8 +6,11 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "s-ayers/open_knowledge": "dev-main",
-        "php": "^8.0"
+        "sandbox/bluegeek9-3351432": "dev-main",
+        "php": "^8.0",
+        "drush/drush": "^11.5",
+        "drupal/devel": "^5.0",
+        "drupal/devel_php": "^1.5"
     },
     "repositories": [
         {
@@ -20,7 +23,7 @@
         },
         {
           "type": "vcs",
-          "url": "https://github.com/s-ayers/open_knowledge.git"
+          "url": "https://git.drupalcode.org/sandbox/bluegeek9-3351432.git"
         }
     ],
     "extra": {
@@ -41,7 +44,7 @@
                 "type:drupal-module"
             ],
             "web/profiles/contrib/open_knowledge": [
-                "s-ayers/open_knowledge"
+                "sandbox/bluegeek9-3351432"
             ],
             "web/profiles/contrib/{$name}": [
                 "type:drupal-profile"
@@ -61,7 +64,8 @@
         "enable-patching": true,
         "patchLevel": {
             "drupal/core": "-p2"
-        }
+        },
+        "compile-whitelist": ["civicrm/civicrm-core", "civicrm/composer-compile-lib"]
     },
     "config": {
         "allow-plugins": {
@@ -69,7 +73,11 @@
             "cweagans/composer-patches": true,
             "drupal/core-composer-scaffold": true,
             "oomphinc/composer-installers-extender": true,
-            "zaporylie/composer-drupal-optimizations": true
+            "zaporylie/composer-drupal-optimizations": true,
+            "civicrm/civicrm-asset-plugin": true,
+            "civicrm/composer-downloads-plugin": true,
+            "civicrm/composer-compile-plugin": true,
+            "drupal/core-project-message": true
         }
     }
 }
